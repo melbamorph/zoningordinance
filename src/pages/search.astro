@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Search Zoning Ordinance">
+  <section class="hero">
+    <span class="tag">Search</span>
+    <h1>Search the Ordinance</h1>
+    <p>Search across articles and sections. Results link directly to section anchors.</p>
+  </section>
+
+  <div class="card" style="margin-top: 24px;">
+    <div class="search-box">
+      <input id="search-input" type="search" placeholder="Search by topic, section number, or term" />
+    </div>
+    <div id="search-results" style="margin-top: 24px;"></div>
+  </div>
+
+  <script type="module">
+    import FlexSearch from 'flexsearch';
+
+    const input = document.getElementById('search-input');
+    const resultsContainer = document.getElementById('search-results');
+
+    const response = await fetch('/api/search-index.json');
+    const data = await response.json();
+
+    const index = new FlexSearch.Index({
+      tokenize: 'forward',
+      cache: 100,
+      resolution: 9
+    });
+
+    data.records.forEach((record) => {
+      index.add(record.id, record.text);
+    });
+
+    const renderResults = (results) => {
+      if (!results.length) {
+        resultsContainer.innerHTML = '<div class="article-meta">No results yet.</div>';
+        return;
+      }
+
+      const html = results.map((id) => {
+        const record = data.records.find((item) => item.id === id);
+        if (!record) return '';
+        return `
+          <div class="search-result">
+            <a href="${record.url}">${record.title}</a>
+            <div class="article-meta">${record.article}</div>
+            <div>${record.excerpt}</div>
+          </div>
+        `;
+      }).join('');
+
+      resultsContainer.innerHTML = html;
+    };
+
+    renderResults([]);
+
+    input.addEventListener('input', async (event) => {
+      const query = event.target.value.trim();
+      if (!query) {
+        renderResults([]);
+        return;
+      }
+      const results = await index.search(query, 15);
+      renderResults(results);
+    });
+  </script>
+</BaseLayout>

@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const collection = await getCollection('ordinance');
+const overview = collection.find((entry) => entry.slug === 'index');
+const articles = collection
+  .filter((entry) => entry.slug !== 'index')
+  .sort((a, b) => Number(a.data.article_number) - Number(b.data.article_number));
+const overviewContent = overview ? await overview.render() : null;
+---
+<BaseLayout title="Ordinance Index">
+  <section class="hero">
+    <span class="tag">Ordinance Index</span>
+    <h1>Zoning Ordinance Articles</h1>
+    <p>Browse each article and jump directly to the section you need.</p>
+  </section>
+
+  {overviewContent && (
+    <article class="card" style="margin-top: 24px;">
+      <overviewContent.Content />
+    </article>
+  )}
+
+  <div class="grid" style="margin-top: 32px;">
+    {articles.map((article) => (
+      <div class="card" key={article.id}>
+        <div class="article-header">
+          <div>
+            <h2>Article {article.data.article_number}: {article.data.title}</h2>
+            <div class="article-meta">Effective {article.data.effective_date}</div>
+          </div>
+          <a class="section-link" href={`/article-${article.data.article_number}`}>Open Article</a>
+        </div>
+        {article.data.summary && <p>{article.data.summary}</p>}
+      </div>
+    ))}
+  </div>
+</BaseLayout>

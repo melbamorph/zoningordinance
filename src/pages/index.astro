@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="City Zoning Ordinance" description="Official zoning ordinance, search, and updates">
+  <section class="hero">
+    <span class="tag">Official Ordinance</span>
+    <h1>City Zoning Ordinance</h1>
+    <p>Find zoning rules, definitions, and updates. Search by topic or browse each article of the ordinance.</p>
+    <div class="search-box">
+      <a class="card" href="/search">Go to Search</a>
+      <a class="card" href="/ordinance">Browse Ordinance</a>
+    </div>
+  </section>
+
+  <section class="grid grid-2" style="margin-top: 32px;">
+    <div class="card">
+      <h2>Browse Articles</h2>
+      <p class="article-meta">Navigate by article number and jump directly to section anchors.</p>
+      <a href="/ordinance" class="section-link">View ordinance index</a>
+    </div>
+    <div class="card">
+      <h2>Recent Updates</h2>
+      <p class="article-meta">See public change summaries and effective dates.</p>
+      <a href="/changes" class="section-link">View change log</a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,23 @@
+{
+  "name": "zoning-ordinance",
+  "version": "1.0.0",
+  "description": "City zoning ordinance static site with CMS editing and search.",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "node scripts/build-index.mjs && astro build",
+    "preview": "astro preview",
+    "import:pdf": "node scripts/pdf-to-md.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "astro": "^4.16.0",
+    "flexsearch": "^0.7.31",
+    "gray-matter": "^4.0.3",
+    "markdown-it": "^14.1.0",
+    "pdf-parse": "^1.1.1",
+    "slugify": "^1.6.6"
+  }
+}

@@ -1,0 +1,36 @@
+---
+import '../styles/global.css';
+
+const { title = 'Zoning Ordinance', description = 'City zoning ordinance' } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-brand">
+        <a href="/" class="site-title">City Zoning Ordinance</a>
+        <span class="site-subtitle">Official zoning code and updates</span>
+      </div>
+      <nav class="site-nav">
+        <a href="/ordinance" class="nav-link">Ordinance</a>
+        <a href="/search" class="nav-link">Search</a>
+        <a href="/changes" class="nav-link">Change Log</a>
+      </nav>
+    </header>
+    <main class="site-main">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div>Maintained by City staff. For official inquiries, contact the Planning Department.</div>
+    </footer>
+  </body>
+</html>

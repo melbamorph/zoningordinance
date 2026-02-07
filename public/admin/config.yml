@@ -1,0 +1,33 @@
+backend:
+  name: github
+  repo: YOUR_ORG/YOUR_REPO
+  branch: main
+  site_domain: YOUR_DOMAIN
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "ordinance"
+    label: "Ordinance Articles"
+    folder: "src/content/ordinance"
+    create: true
+    slug: "article-{{article_number}}"
+    fields:
+      - { label: "Article Number", name: "article_number", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Effective Date", name: "effective_date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Summary", name: "summary", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "changes"
+    label: "Change Log"
+    folder: "src/content/changes"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}"
+    fields:
+      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }

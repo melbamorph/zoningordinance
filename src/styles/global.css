@@ -1,0 +1,236 @@
+:root {
+  color-scheme: light;
+  --ink: #1c1b19;
+  --muted: #5a5752;
+  --paper: #f8f2e9;
+  --paper-deep: #efe6d9;
+  --accent: #2d6a4f;
+  --accent-2: #1b3a57;
+  --border: #d9cbb7;
+  --highlight: #fff2cc;
+  --shadow: 0 10px 30px rgba(16, 10, 4, 0.1);
+  font-family: "Fraunces", "Iowan Old Style", "Palatino Linotype", "Palatino", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: radial-gradient(circle at top right, #fff7e8 0%, var(--paper) 45%, var(--paper-deep) 100%);
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-2);
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 48px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.site-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.site-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.site-subtitle {
+  font-family: "Work Sans", "Segoe UI", sans-serif;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.site-nav {
+  display: flex;
+  gap: 18px;
+  font-family: "Work Sans", "Segoe UI", sans-serif;
+  font-size: 0.9rem;
+}
+
+.nav-link {
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover {
+  border-color: var(--accent);
+}
+
+.site-main {
+  padding: 48px;
+}
+
+.site-footer {
+  padding: 32px 48px 60px;
+  font-family: "Work Sans", "Segoe UI", sans-serif;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.hero {
+  display: grid;
+  gap: 20px;
+  max-width: 860px;
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  margin: 0;
+}
+
+.hero p {
+  font-family: "Work Sans", "Segoe UI", sans-serif;
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.tag {
+  display: inline-block;
+  font-family: "Work Sans", "Segoe UI", sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.article-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.article-meta {
+  font-family: "Work Sans", "Segoe UI", sans-serif;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.toc {
+  position: sticky;
+  top: 120px;
+  align-self: flex-start;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fffdf7;
+  font-family: "Work Sans", "Segoe UI", sans-serif;
+  font-size: 0.85rem;
+}
+
+.toc h3 {
+  margin-top: 0;
+  font-size: 0.9rem;
+}
+
+.toc a {
+  display: block;
+  padding: 6px 0;
+  color: var(--muted);
+}
+
+.toc a:hover {
+  color: var(--accent-2);
+}
+
+.section-link {
+  font-family: "Work Sans", "Segoe UI", sans-serif;
+  font-size: 0.8rem;
+  color: var(--accent-2);
+  margin-left: 8px;
+}
+
+.section-link:hover {
+  text-decoration: underline;
+}
+
+.search-box {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  font-size: 1rem;
+  font-family: "Work Sans", "Segoe UI", sans-serif;
+}
+
+.search-result {
+  border-bottom: 1px solid var(--border);
+  padding: 12px 0;
+}
+
+.search-result a {
+  font-weight: 600;
+}
+
+.callout {
+  background: var(--highlight);
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid #f3d38a;
+  font-family: "Work Sans", "Segoe UI", sans-serif;
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .site-main {
+    padding: 32px 24px;
+  }
+
+  .article-header {
+    flex-direction: column;
+  }
+}

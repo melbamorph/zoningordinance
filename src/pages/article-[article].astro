@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const articles = (await getCollection('ordinance')).filter((entry) => entry.slug !== 'index');
+  return articles.map((entry) => ({
+    params: { article: entry.data.article_number },
+    props: { slug: entry.slug }
+  }));
+}
+
+const { slug } = Astro.props;
+const entries = await getCollection('ordinance');
+const entry = entries.find((item) => item.slug === slug);
+if (!entry) {
+  throw new Error(`Article not found: ${slug}`);
+}
+const { Content, headings } = await entry.render();
+const sectionHeadings = headings.filter((heading) => heading.depth === 2);
+---
+<BaseLayout title={`Article ${entry.data.article_number}: ${entry.data.title}`}>
+  <div class="article-header">
+    <div>
+      <span class="tag">Article {entry.data.article_number}</span>
+      <h1>{entry.data.title}</h1>
+      <div class="article-meta">Effective {entry.data.effective_date}</div>
+    </div>
+    <aside class="toc">
+      <h3>Sections</h3>
+      {sectionHeadings.map((heading) => (
+        <a href={`#${heading.slug}`} key={heading.slug}>{heading.text}</a>
+      ))}
+    </aside>
+  </div>
+
+  <article class="card" style="margin-top: 24px;">
+    <Content />
+  </article>
+
+  <script>
+    const headings = document.querySelectorAll('article h2[id]');
+    headings.forEach((heading) => {
+      const link = document.createElement('a');
+      link.className = 'section-link';
+      link.href = `#${heading.id}`;
+      link.textContent = 'Copy link';
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const url = `${window.location.pathname}#${heading.id}`;
+        navigator.clipboard?.writeText(`${window.location.origin}${url}`);
+        window.location.hash = heading.id;
+      });
+      heading.appendChild(link);
+    });
+  </script>
+</BaseLayout>

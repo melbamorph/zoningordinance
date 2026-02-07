@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const rawEntries = (await getCollection('changes')).sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+const entries = await Promise.all(
+  rawEntries.map(async (entry) => {
+    const { Content } = await entry.render();
+    return { entry, Content };
+  })
+);
+---
+<BaseLayout title="Change Log">
+  <section class="hero">
+    <span class="tag">Change Log</span>
+    <h1>Public Updates</h1>
+    <p>Summaries of zoning ordinance updates and effective dates.</p>
+  </section>
+
+  <div class="grid" style="margin-top: 32px;">
+    {entries.map(({ entry, Content }) => (
+      <div class="card" key={entry.id}>
+        <div class="article-header">
+          <div>
+            <h2>{entry.data.title}</h2>
+            <div class="article-meta">{entry.data.date}</div>
+          </div>
+        </div>
+        {entry.data.summary && <p>{entry.data.summary}</p>}
+        <div style="margin-top: 12px;">
+          <Content />
+        </div>
+      </div>
+    ))}
+  </div>
+</BaseLayout>
