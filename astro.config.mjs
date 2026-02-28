@@ -1,9 +1,9 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://example.com',
+  site: 'https://melbamorph.github.io',
+  base: '/zoningordinance',
   output: 'static',
-  markdown: {
-    headingIds: 'github'
-  }
+  markdown: { headingIds: 'github' }
 });
+

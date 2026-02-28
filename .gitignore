@@ -1,7 +1,9 @@
-node_modules
-dist
-.astro
-.tmp
+node_modules/
+dist/
+.astro/
 .tmp/
-tmp
-public/uploads
+tmp/
+*.log
+.DS_Store
+.env
+.env.*
