@@ -1,3 +1,76 @@
 {
-  "records": []
+  "records": [
+    {
+      "id": "1-section-1-1",
+      "title": "Section 1-1 Purpose",
+      "article": "Article 1: General Provisions",
+      "url": "/article-1#section-1-1",
+      "text": "General Provisions Section 1-1 Purpose The purpose of this ordinance is to promote health, safety, and general welfare by regulating land use and development.",
+      "excerpt": "The purpose of this ordinance is to promote health, safety, and general welfare by regulating land use and development."
+    },
+    {
+      "id": "1-section-1-2",
+      "title": "Section 1-2 Authority",
+      "article": "Article 1: General Provisions",
+      "url": "/article-1#section-1-2",
+      "text": "General Provisions Section 1-2 Authority This ordinance is adopted under state enabling legislation and local charter authority.",
+      "excerpt": "This ordinance is adopted under state enabling legislation and local charter authority."
+    },
+    {
+      "id": "1-section-1-3",
+      "title": "Section 1-3 Definitions",
+      "article": "Article 1: General Provisions",
+      "url": "/article-1#section-1-3",
+      "text": "General Provisions Section 1-3 Definitions Key terms used throughout the ordinance are defined in this section. Subsection 1-3.A Applicability {#section-1-3-a} Definitions apply to all articles unless otherwise stated.",
+      "excerpt": "Key terms used throughout the ordinance are defined in this section. Subsection 1-3.A Applicability {#section-1-3-a} Definitions apply to all articles unless otherwise stated."
+    },
+    {
+      "id": "2-section-2-1",
+      "title": "Section 2-1 Zoning Districts",
+      "article": "Article 2: Districts and Uses",
+      "url": "/article-2#section-2-1",
+      "text": "Districts and Uses Section 2-1 Zoning Districts The city is divided into zoning districts as shown on the official zoning map.",
+      "excerpt": "The city is divided into zoning districts as shown on the official zoning map."
+    },
+    {
+      "id": "2-section-2-2",
+      "title": "Section 2-2 Permitted Uses",
+      "article": "Article 2: Districts and Uses",
+      "url": "/article-2#section-2-2",
+      "text": "Districts and Uses Section 2-2 Permitted Uses Permitted uses by district are listed in the use tables.",
+      "excerpt": "Permitted uses by district are listed in the use tables."
+    },
+    {
+      "id": "2-section-2-3",
+      "title": "Section 2-3 Special Use Permits",
+      "article": "Article 2: Districts and Uses",
+      "url": "/article-2#section-2-3",
+      "text": "Districts and Uses Section 2-3 Special Use Permits Special uses require review and approval by the zoning board.",
+      "excerpt": "Special uses require review and approval by the zoning board."
+    },
+    {
+      "id": "3-section-3-1",
+      "title": "Section 3-1 Lot Area",
+      "article": "Article 3: Dimensional Standards",
+      "url": "/article-3#section-3-1",
+      "text": "Dimensional Standards Section 3-1 Lot Area Minimum lot area standards apply to all principal uses.",
+      "excerpt": "Minimum lot area standards apply to all principal uses."
+    },
+    {
+      "id": "3-section-3-2",
+      "title": "Section 3-2 Setbacks",
+      "article": "Article 3: Dimensional Standards",
+      "url": "/article-3#section-3-2",
+      "text": "Dimensional Standards Section 3-2 Setbacks Front, side, and rear setbacks must be met for new construction.",
+      "excerpt": "Front, side, and rear setbacks must be met for new construction."
+    },
+    {
+      "id": "3-section-3-3",
+      "title": "Section 3-3 Building Height",
+      "article": "Article 3: Dimensional Standards",
+      "url": "/article-3#section-3-3",
+      "text": "Dimensional Standards Section 3-3 Building Height Maximum building height is regulated by district.",
+      "excerpt": "Maximum building height is regulated by district."
+    }
+  ]
 }

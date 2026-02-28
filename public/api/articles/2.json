@@ -1,0 +1,30 @@
+{
+  "article_number": "2",
+  "title": "Districts and Uses",
+  "effective_date": "2026-01-21",
+  "summary": "Zoning districts, permitted uses, and overlays.",
+  "tags": [
+    "districts"
+  ],
+  "sections": [
+    {
+      "id": "section-2-1",
+      "title": "Section 2-1 Zoning Districts",
+      "url": "/article-2#section-2-1",
+      "excerpt": "The city is divided into zoning districts as shown on the official zoning map."
+    },
+    {
+      "id": "section-2-2",
+      "title": "Section 2-2 Permitted Uses",
+      "url": "/article-2#section-2-2",
+      "excerpt": "Permitted uses by district are listed in the use tables."
+    },
+    {
+      "id": "section-2-3",
+      "title": "Section 2-3 Special Use Permits",
+      "url": "/article-2#section-2-3",
+      "excerpt": "Special uses require review and approval by the zoning board."
+    }
+  ],
+  "body": "\n## Section 2-1 Zoning Districts {#section-2-1}\n\nThe city is divided into zoning districts as shown on the official zoning map.\n\n## Section 2-2 Permitted Uses {#section-2-2}\n\nPermitted uses by district are listed in the use tables.\n\n## Section 2-3 Special Use Permits {#section-2-3}\n\nSpecial uses require review and approval by the zoning board.\n"
+}

@@ -1,0 +1,30 @@
+{
+  "article_number": "3",
+  "title": "Dimensional Standards",
+  "effective_date": "2026-01-21",
+  "summary": "Lot size, setbacks, height, and coverage requirements.",
+  "tags": [
+    "standards"
+  ],
+  "sections": [
+    {
+      "id": "section-3-1",
+      "title": "Section 3-1 Lot Area",
+      "url": "/article-3#section-3-1",
+      "excerpt": "Minimum lot area standards apply to all principal uses."
+    },
+    {
+      "id": "section-3-2",
+      "title": "Section 3-2 Setbacks",
+      "url": "/article-3#section-3-2",
+      "excerpt": "Front, side, and rear setbacks must be met for new construction."
+    },
+    {
+      "id": "section-3-3",
+      "title": "Section 3-3 Building Height",
+      "url": "/article-3#section-3-3",
+      "excerpt": "Maximum building height is regulated by district."
+    }
+  ],
+  "body": "\n## Section 3-1 Lot Area {#section-3-1}\n\nMinimum lot area standards apply to all principal uses.\n\n## Section 3-2 Setbacks {#section-3-2}\n\nFront, side, and rear setbacks must be met for new construction.\n\n## Section 3-3 Building Height {#section-3-3}\n\nMaximum building height is regulated by district.\n"
+}
