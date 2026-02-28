@@ -16,7 +16,7 @@
     "astro": "^5.15.9",
     "flexsearch": "^0.7.31",
     "gray-matter": "^4.0.3",
-    "markdown-it": "^14.1.0",
+    "markdown-it": "^14.1.1",
     "pdf-parse": "^1.1.1",
     "slugify": "^1.6.6"
   }
